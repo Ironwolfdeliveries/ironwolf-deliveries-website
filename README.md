@@ -1,3 +1,3 @@
-# IronWolf Deliveries Website
+# IronWolf Deliveries Website V2
 
-Static website for IronWolf Deliveries.
+Updated website with About, Services, Quote Form, Contact, Service Area, Gallery, and DOT/MC placeholders.
