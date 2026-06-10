@@ -9,7 +9,7 @@
     * { box-sizing: border-box; scroll-behavior: smooth; }
     body { margin: 0; font-family: Arial, Helvetica, sans-serif; background: #050505; color: #fff; line-height: 1.6; }
     a { color: inherit; }
-    .topbar { position: sticky; top: 0; z-index: 99; background: rgba(5,5,5,.9); backdrop-filter: blur(10px); border-bottom: 1px solid #2a2a2a; }
+    .topbar { position: sticky; top: 0; z-index: 99; background: rgba(5,5,5,.92); backdrop-filter: blur(10px); border-bottom: 1px solid #2a2a2a; }
     .nav { max-width: 1180px; margin: auto; padding: 14px 20px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
     .brand { font-weight: 900; text-transform: uppercase; letter-spacing: .08em; }
     .brand span { color: #dc2626; }
@@ -18,7 +18,10 @@
     .hero { min-height: 92vh; padding: 50px 20px; display: grid; place-items: center; background: radial-gradient(circle at top, rgba(185,28,28,.38), transparent 35%), linear-gradient(180deg, #170000 0%, #050505 62%); }
     .container { width: min(1180px, 100%); margin: auto; }
     .hero-grid { display: grid; grid-template-columns: .95fr 1.05fr; gap: 42px; align-items: center; }
-    .logo { width: 100%; border-radius: 20px; box-shadow: 0 0 50px rgba(220,38,38,.35); border: 1px solid rgba(220,38,38,.3); }
+    .logo-card { border-radius: 20px; overflow: hidden; background: #050505; box-shadow: 0 0 50px rgba(220,38,38,.35); border: 1px solid rgba(220,38,38,.3); }
+    .logo-frame { height: 485px; overflow: hidden; }
+    .logo { width: 100%; height: 560px; object-fit: cover; object-position: center top; display: block; }
+    .logo-contact { padding: 16px 18px; background: linear-gradient(90deg, #0b0b0d, #170000); border-top: 1px solid rgba(220,38,38,.35); display: grid; gap: 5px; font-weight: 800; }
     .eyebrow { color: #ef4444; font-weight: 800; letter-spacing: .25em; text-transform: uppercase; font-size: 13px; }
     h1 { font-size: clamp(42px, 7vw, 86px); line-height: .95; margin: 14px 0; text-transform: uppercase; }
     h2 { font-size: clamp(32px, 5vw, 54px); line-height: 1.05; margin: 0 0 18px; text-transform: uppercase; }
@@ -37,11 +40,7 @@
     .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 34px; align-items: start; }
     .services { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
     .service { background: #111113; border: 1px solid #27272a; border-radius: 14px; padding: 16px; font-weight: 700; }
-    .map { min-height: 360px; border-radius: 20px; border: 1px solid #3f3f46; background: radial-gradient(circle at 78% 30%, rgba(220,38,38,.35), transparent 18%), radial-gradient(circle at 45% 55%, rgba(220,38,38,.25), transparent 16%), linear-gradient(135deg, #111827, #050505); padding: 28px; position: relative; overflow: hidden; }
-    .map:before { content:""; position:absolute; inset:0; background-image: linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px); background-size: 42px 42px; opacity:.4; }
-    .map-content { position: relative; z-index: 2; }
-    .map-list { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
-    .state { border: 1px solid rgba(255,255,255,.18); background: rgba(0,0,0,.35); border-radius: 999px; padding: 8px 12px; font-weight: 700; }
+    iframe { width: 100%; min-height: 380px; border: 0; border-radius: 20px; filter: grayscale(20%) contrast(105%); }
     .gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
     .photo { min-height: 210px; border-radius: 18px; border: 1px solid #27272a; overflow: hidden; position: relative; background-size: cover; background-position: center; }
     .photo:after { content: attr(data-label); position: absolute; left: 0; right: 0; bottom: 0; padding: 16px; background: linear-gradient(transparent, rgba(0,0,0,.85)); font-weight: 800; }
@@ -55,11 +54,16 @@
     input, textarea, select { width: 100%; padding: 14px; border-radius: 12px; border: 1px solid #3f3f46; background: #050505; color: #fff; font: inherit; }
     textarea { min-height: 120px; }
     .form-note { color: #a1a1aa; font-size: 14px; }
-    .compliance { border: 1px dashed #52525b; border-radius: 18px; padding: 22px; background: #0b0b0d; }
+    .compliance { border: 1px dashed #52525b; border-radius: 18px; padding: 22px; background: #0b0b0d; margin-top: 20px; }
+    .reviews { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .stars { color: #facc15; letter-spacing: 2px; }
+    .social { display: inline-block; margin-top: 14px; color: #60a5fa; font-weight: 800; }
     footer { border-top: 1px solid #27272a; padding: 34px 20px; text-align: center; color: #a1a1aa; }
     @media (max-width: 880px) {
-      .hero-grid, .two-col, .cards, .services, .gallery { grid-template-columns: 1fr; }
+      .hero-grid, .two-col, .cards, .services, .gallery, .reviews { grid-template-columns: 1fr; }
       .links { display: none; }
+      .logo-frame { height: 350px; }
+      .logo { height: 420px; }
       section { padding: 58px 20px; }
     }
   </style>
@@ -74,6 +78,7 @@
         <a href="#area">Service Area</a>
         <a href="#gallery">Gallery</a>
         <a href="#quote">Quote</a>
+        <a href="#reviews">Reviews</a>
         <a href="#contact">Contact</a>
       </div>
     </nav>
@@ -82,16 +87,22 @@
   <main>
     <section class="hero">
       <div class="container hero-grid">
-        <div>
-          <img class="logo" src="ironwolf-logo.png" alt="IronWolf Deliveries logo">
+        <div class="logo-card">
+          <div class="logo-frame">
+            <img class="logo" src="ironwolf-logo.png" alt="IronWolf Deliveries logo">
+          </div>
+          <div class="logo-contact">
+            <span>Call: <a href="tel:8622896073">862-289-6073</a></span>
+            <span>Email: <a href="mailto:admin@ironwolfdeliveries.com">admin@ironwolfdeliveries.com</a></span>
+          </div>
         </div>
         <div>
           <div class="eyebrow">New Jersey Based • East Coast Delivery</div>
           <h1>Iron<span class="red">Wolf</span> Deliveries</h1>
           <p class="lead">Hotshot freight, cargo van deliveries, pallet transport, flatbed trailer loads, and heavy-duty delivery solutions built on trust, responsibility, and dependable service.</p>
           <div class="buttons">
-            <a class="btn btn-primary" href="tel:8622896073">Call 862-289-6073</a>
-            <a class="btn btn-secondary" href="#quote">Request a Quote</a>
+            <a class="btn btn-primary" href="#quote">Get a Quote</a>
+            <a class="btn btn-secondary" href="tel:8622896073">Call 862-289-6073</a>
           </div>
         </div>
       </div>
@@ -139,19 +150,21 @@
     <section id="area" class="dark">
       <div class="container two-col">
         <div>
-          <div class="eyebrow">Service Area</div>
-          <h2>From New Jersey across the East Coast.</h2>
-          <p class="muted">Based in Elizabeth, NJ, with service availability for local, regional, and long-distance East Coast deliveries.</p>
-        </div>
-        <div class="map">
-          <div class="map-content">
-            <h3>Primary Coverage</h3>
-            <div class="map-list">
-              <span class="state">NJ</span><span class="state">NY</span><span class="state">PA</span><span class="state">DE</span><span class="state">MD</span><span class="state">VA</span><span class="state">NC</span><span class="state">SC</span><span class="state">GA</span><span class="state">FL</span>
-            </div>
-            <p class="muted" style="margin-top:22px;">Need a route outside this area? Contact us with pickup and delivery details.</p>
+          <div class="eyebrow">Google Maps / Service Area</div>
+          <h2>Based in Elizabeth, NJ.</h2>
+          <p class="muted">Serving New Jersey, New York, Pennsylvania, Delaware, Maryland, Virginia, the Carolinas, Georgia, Florida, and surrounding East Coast routes.</p>
+          <div class="compliance">
+            <h3>DOT / MC Information</h3>
+            <p class="muted">DOT Number: __________________</p>
+            <p class="muted">MC Number: __________________</p>
           </div>
         </div>
+        <iframe
+          loading="lazy"
+          allowfullscreen
+          referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?q=Elizabeth%2C%20NJ&output=embed">
+        </iframe>
       </div>
     </section>
 
@@ -174,23 +187,22 @@
     <section id="quote" class="dark">
       <div class="container two-col">
         <div>
-          <div class="eyebrow">Quote Request</div>
+          <div class="eyebrow">Lead Form</div>
           <h2>Request a Delivery Quote</h2>
-          <p class="muted">Send as much detail as possible. Include pickup location, drop-off location, cargo size, cargo weight, timing, and whether loading equipment is available.</p>
-          <div class="compliance">
-            <h3>DOT / MC Information</h3>
-            <p class="muted">DOT Number: __________________</p>
-            <p class="muted">MC Number: __________________</p>
-          </div>
+          <p class="muted">This form is set up to email quote requests to admin@ironwolfdeliveries.com through FormSubmit. The first submission may require email confirmation to activate the form.</p>
         </div>
-        <form action="mailto:admin@ironwolfdeliveries.com" method="post" enctype="text/plain">
-          <input name="name" placeholder="Your Name / Company" required>
-          <input name="phone" placeholder="Phone Number" required>
-          <input name="email" type="email" placeholder="Email Address">
-          <input name="pickup" placeholder="Pickup Location">
-          <input name="delivery" placeholder="Delivery Location">
-          <input name="cargo" placeholder="Cargo Type / Weight / Dimensions">
-          <select name="service">
+        <form action="https://formsubmit.co/admin@ironwolfdeliveries.com" method="POST">
+          <input type="hidden" name="_subject" value="New Quote Request from IronWolfDeliveries.com">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_next" value="https://ironwolfdeliveries.com/#quote">
+          <input name="Name / Company" placeholder="Your Name / Company" required>
+          <input name="Phone" placeholder="Phone Number" required>
+          <input name="Email" type="email" placeholder="Email Address">
+          <input name="Pickup Location" placeholder="Pickup Location">
+          <input name="Delivery Location" placeholder="Delivery Location">
+          <input name="Cargo Details" placeholder="Cargo Type / Weight / Dimensions">
+          <select name="Service Needed">
             <option>Service Needed</option>
             <option>Cargo Van Delivery</option>
             <option>Flatbed Trailer Load</option>
@@ -199,18 +211,33 @@
             <option>Equipment Transport</option>
             <option>Other</option>
           </select>
-          <textarea name="message" placeholder="Additional details"></textarea>
+          <textarea name="Additional Details" placeholder="Delivery date, timing, loading/unloading details, special instructions"></textarea>
           <button class="btn btn-primary" type="submit">Send Quote Request</button>
-          <p class="form-note">This form opens your email app. You can also email admin@ironwolfdeliveries.com directly.</p>
+          <p class="form-note">For urgent loads, call or text 862-289-6073.</p>
         </form>
       </div>
     </section>
 
-    <section id="contact">
+    <section id="reviews">
+      <div class="container">
+        <div class="eyebrow">Customer Reviews</div>
+        <h2>Built on trust and responsibility.</h2>
+        <div class="reviews">
+          <div class="card"><div class="stars">★★★★★</div><p>"Professional communication and dependable delivery service."</p><p class="muted">— Customer Review Coming Soon</p></div>
+          <div class="card"><div class="stars">★★★★★</div><p>"Handled the load carefully and kept us updated from pickup to drop-off."</p><p class="muted">— Customer Review Coming Soon</p></div>
+          <div class="card"><div class="stars">★★★★★</div><p>"Reliable team for local and regional delivery needs."</p><p class="muted">— Customer Review Coming Soon</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="dark">
       <div class="container two-col">
         <div>
           <div class="eyebrow">Contact</div>
           <h2>Let's move your freight.</h2>
+          <p class="muted">Call, text, email, or submit a quote request.</p>
+          <a class="social" href="https://www.facebook.com/" target="_blank" rel="noopener">Visit us on Facebook</a>
+          <p class="form-note">Replace this Facebook link with your exact IronWolf Deliveries Facebook page URL when ready.</p>
         </div>
         <div class="card">
           <p><strong>Phone:</strong> <a href="tel:8622896073">862-289-6073</a></p>

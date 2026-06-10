@@ -1,3 +1,3 @@
-# IronWolf Deliveries Website V2
+# IronWolf Deliveries Website V3
 
-Updated website with About, Services, Quote Form, Contact, Service Area, Gallery, and DOT/MC placeholders.
+Updated with cropped logo display, real email lead form via FormSubmit, Google Maps embed, Facebook link placeholder, quote request form, customer reviews, and DOT/MC placeholders.
