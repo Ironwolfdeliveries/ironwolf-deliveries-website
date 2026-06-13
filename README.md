@@ -1,3 +1,3 @@
-# IronWolf Deliveries Website V6
+# IronWolf Deliveries Website V7
 
-Updated so the approved top banner displays fully without cropping, keeps the corrected logo with contact info, and includes Facebook and Instagram links.
+This version uses the exact approved top website image as ironwolf-banner.jpg and keeps Instagram/Facebook links.
