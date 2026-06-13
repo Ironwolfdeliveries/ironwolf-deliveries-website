@@ -1,3 +1,3 @@
-# IronWolf Deliveries Website V4
+# IronWolf Deliveries Website V6
 
-Updated with approved banner, corrected Facebook link, pricing quote section, call/quote/Facebook buttons, FormSubmit quote form, Google Maps, gallery, reviews, and DOT/MC placeholders.
+Updated so the approved top banner displays fully without cropping, keeps the corrected logo with contact info, and includes Facebook and Instagram links.
