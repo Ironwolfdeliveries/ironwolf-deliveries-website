@@ -1,3 +1,3 @@
-# IronWolf Deliveries Website V7
+# IronWolf Deliveries Website V8
 
-This version uses the exact approved top website image as ironwolf-banner.jpg and keeps Instagram/Facebook links.
+Removed the duplicate square logo/hero section and replaced it with a customer-focused Why Choose IronWolf Deliveries section. Keeps the approved top banner, Facebook link, Instagram link, quote form, pricing section, Google Maps, reviews, and DOT/MC placeholders.
