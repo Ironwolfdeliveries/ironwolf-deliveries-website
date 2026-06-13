@@ -1,3 +1,3 @@
-# IronWolf Deliveries Website V8
+# IronWolf Deliveries Website V9
 
-Removed the duplicate square logo/hero section and replaced it with a customer-focused Why Choose IronWolf Deliveries section. Keeps the approved top banner, Facebook link, Instagram link, quote form, pricing section, Google Maps, reviews, and DOT/MC placeholders.
+Added LinkedIn button and LinkedIn contact link while keeping the approved banner, Facebook link, Instagram link, quote form, pricing section, Google Maps, reviews, and DOT/MC placeholders.
