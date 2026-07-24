@@ -1,14 +1,10 @@
-# IronWolf Deliveries Website V13
+# IronWolf Deliveries Website V14
 
-Updated the V12 website so all visible buttons and contact areas embedded in the homepage banner are interactive and responsive.
+Updated the Instagram profile links throughout the website to the verified profile address:
 
-Changes include:
-- Homepage image navigation links
-- All Request a Quote buttons scroll to the quote form
-- Our Services and service-category areas are clickable
-- Phone / Call / Text areas use `tel:` links
-- Email areas use `mailto:` links
-- Instagram area opens the company Instagram page
-- Existing USDOT 7138133 and MC 85394904 updates retained
+https://www.instagram.com/ironwolfdeliveries/
 
-The banner hotspots scale with the image on desktop, tablet, and mobile.
+Changes from V13:
+- Added the trailing slash to every Instagram profile URL.
+- Added `noopener noreferrer` to Instagram links that open in a new tab.
+- Preserved all V13 clickable banner actions, USDOT 7138133, and MC 85394904 updates.
