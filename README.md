@@ -1,4 +1,14 @@
-IronWolf Deliveries Website V12
+# IronWolf Deliveries Website V13
 
-Added verified operating authority numbers: USDOT 7138133 and MC 85394904. Updated the Service Area compliance box, Contact section, and website footer. Preserves all V11 content and links.
+Updated the V12 website so all visible buttons and contact areas embedded in the homepage banner are interactive and responsive.
 
+Changes include:
+- Homepage image navigation links
+- All Request a Quote buttons scroll to the quote form
+- Our Services and service-category areas are clickable
+- Phone / Call / Text areas use `tel:` links
+- Email areas use `mailto:` links
+- Instagram area opens the company Instagram page
+- Existing USDOT 7138133 and MC 85394904 updates retained
+
+The banner hotspots scale with the image on desktop, tablet, and mobile.
