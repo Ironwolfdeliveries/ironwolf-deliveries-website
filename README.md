@@ -1,3 +1,4 @@
-# IronWolf Deliveries Website V11
+IronWolf Deliveries Website V12
 
-Added Leave a Review button linked to Facebook reviews and updated sample review names to first name with last initial. Keeps all V10 sections and links.
+Added verified operating authority numbers: USDOT 7138133 and MC 85394904. Updated the Service Area compliance box, Contact section, and website footer. Preserves all V11 content and links.
+
